@@ -5,7 +5,7 @@ import Input from "./Input";
 
 export default function SparklesHero() {
   return (
-    <div className="h-[100vh] w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+    <div className="h-[100vh] w-full bg-black flex flex-col items-center justify-center overflow-hidden">
       <div className="text-secondary text-sm md:text-xl font-bold my-5">
         On January 20 - 22
       </div>
