@@ -1,0 +1,115 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model api {
+  id       BigInt @id @default(autoincrement())
+  hits     BigInt @default(0)
+  endpoint String @unique
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model confirmedEmails {
+  id         BigInt   @id @default(autoincrement())
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  email      String
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model jobs {
+  id                     BigInt         @id @default(autoincrement())
+  created_at             DateTime       @default(now()) @db.Timestamptz(6)
+  max_salary             BigInt?
+  link                   String
+  company                String
+  logoURL                String?
+  description            String
+  title                  String
+  published              Boolean
+  collected_from         String?
+  unique_identifier      String?        @unique
+  featured               Boolean        @default(false)
+  passed_ai_check        Boolean        @default(false)
+  ai_check_feedback      String?
+  job_role               jobRole?
+  job_type               jobType?
+  degree_required        Boolean        @default(false)
+  sticky                 Boolean        @default(false)
+  location               String?
+  views                  BigInt         @default(0)
+  isDescriptionFormatted Boolean        @default(false)
+  applications           BigInt         @default(0)
+  labelled               Boolean        @default(false)
+  technologies           String[]
+  min_salary             BigInt?
+  promotedJobs           promotedJobs[]
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model posters {
+  id               BigInt   @id @default(autoincrement())
+  created_at       DateTime @default(now()) @db.Timestamptz(6)
+  username         String?
+  platform         String?
+  app_key          String?
+  app_secret       String?
+  access_token     String?
+  access_secret    String?
+  background_index BigInt   @default(1)
+  posts            posts[]
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model posts {
+  id         BigInt    @id @default(autoincrement())
+  created_at DateTime  @default(now()) @db.Timestamptz(6)
+  postURL    String?
+  postedAt   DateTime? @db.Timestamptz(6)
+  posterId   BigInt?
+  platform   String?
+  posters    posters?  @relation(fields: [posterId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model promotedJobs {
+  id            BigInt   @id @default(autoincrement())
+  created_at    DateTime @default(now()) @db.Timestamptz(6)
+  job_id        BigInt?
+  email         String?
+  twitter_post  Boolean?
+  linkedin_post Boolean?
+  bundle        Boolean?
+  highlight     Boolean?
+  newsletter    Boolean?
+  jobs          jobs?    @relation(fields: [job_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+enum jobRole {
+  coding
+  design
+  customer_support    @map("customer-support")
+  marketing_and_sales @map("marketing-and-sales")
+  product
+  other
+}
+
+enum jobType {
+  full_time  @map("full-time")
+  part_time  @map("part-time")
+  internship
+  freelance
+  co_founder @map("co-founder")
+  other
+}
+
+model hackathon{
+  id  BigInt  @id @default(autoincrement())
+  email String @unique
+}
