@@ -7,7 +7,7 @@ export default function SparklesHero() {
   return (
     <div className="h-[100vh] w-full bg-black flex flex-col items-center justify-center overflow-hidden">
       <p className="text-secondary text-sm md:text-xl font-bold my-5">
-        January 20 - 22
+        Online, January 20 - 22
       </p>
       <h1 className="text-5xl lg:text-8xl font-bold text-center text-white relative z-20">
         CrackedDevs <br /> Hackathon
@@ -32,6 +32,9 @@ export default function SparklesHero() {
         <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
       </div>
       <div className="my-8">
+      <p className="text-secondary text-sm md:text-xl my-5 text-center">
+        Sign Up Now
+      </p>
         <Input />
       </div>
       <p className="text-secondary text-sm md:text-xl my-5 opacity-40 hover:opacity-90 hover:cursor-pointer">
