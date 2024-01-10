@@ -34,7 +34,7 @@ export default function SparklesHero() {
       <div className="my-8">
         <Input />
       </div>
-      <p className="text-secondary text-sm md:text-xl my-5 opacity-40">
+      <p className="text-secondary text-sm md:text-xl my-5 opacity-40 hover:opacity-90 hover:cursor-pointer">
         More details coming soon
       </p>
     </div>
