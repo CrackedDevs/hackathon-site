@@ -6,10 +6,10 @@ import Input from "./Input";
 export default function SparklesHero() {
   return (
     <div className="h-[100vh] w-full bg-black flex flex-col items-center justify-center overflow-hidden">
-      <div className="text-secondary text-sm md:text-xl font-bold my-5">
-        On January 20 - 22
-      </div>
-      <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20">
+      <p className="text-secondary text-sm md:text-xl font-bold my-5">
+        January 20 - 22
+      </p>
+      <h1 className="text-5xl lg:text-8xl font-bold text-center text-white relative z-20">
         CrackedDevs <br /> Hackathon
       </h1>
       <div className="w-[40rem] h-40 relative">
@@ -34,6 +34,9 @@ export default function SparklesHero() {
       <div className="my-8">
         <Input />
       </div>
+      <p className="text-secondary text-sm md:text-xl my-5 opacity-40">
+        More details coming soon
+      </p>
     </div>
   );
 }
