@@ -46,13 +46,15 @@ export default function Input() {
         <input
           type="email"
           onChange={handleInputChange}
+          name="email"
+          autoComplete="email"
           required
           placeholder="elon@spacex.com"
           className="rounded-l-lg w-full border outline-none relative z-10 focus:border-gray-500 transition-all duration-500 py-3 md:py-5 px-4 md:px-10 text-secondary bg-neutral-950 placeholder:text-neutral-700"
         />
         <button
           type="submit"
-          className={cn("rounded-r-lg capitalize text-lg py-2 px-8 bg-white text-black z-10", { "cursor-not-allowed": loading })}
+          className={cn("rounded-r-lg capitalize text-lg py-2 px-4 md:px-6 lg:px-8 bg-white text-black z-10", { "cursor-not-allowed": loading })}
           disabled={loading}
         >
           {loading ? (
