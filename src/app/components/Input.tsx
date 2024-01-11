@@ -16,6 +16,7 @@ export default function Input() {
     if (!emailRegex.test(email)) {
       toast.error("Please enter a valid email");
       setLoading(false);
+      setEmail("")
       return;
     }
 
@@ -27,10 +28,12 @@ export default function Input() {
 
     if (response?.status === 400) {
       setLoading(false);
+      setEmail("")
       toast.error(response?.message);
       return;
     } else if (response?.status === 200) {
       setLoading(false);
+      setEmail("")
       toast.success(response.message);
       return;
     }
