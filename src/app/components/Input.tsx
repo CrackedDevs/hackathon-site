@@ -1,9 +1,7 @@
 "use client";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { IconArrowRight } from "@tabler/icons-react";
 import { useState } from "react";
-import { ToastContainer } from "react-toastify";
+import { Toaster, toast } from "react-hot-toast";
 
 import { joinHackathon } from "../actions";
 import { cn } from "@/lib/utils";
@@ -36,6 +34,7 @@ export default function Input() {
       toast.success(response.message);
       return;
     }
+    
   };
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -47,12 +46,13 @@ export default function Input() {
         <input
           type="email"
           onChange={handleInputChange}
+          required
           placeholder="elon@spacex.com"
-          className="rounded-l-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500 w-full relative z-10  py-3 md:py-5 px-4 md:px-10 text-secondary bg-neutral-950 placeholder:text-neutral-700"
+          className="rounded-l-lg w-full border outline-none relative z-10 focus:border-gray-500 transition-all duration-500 py-3 md:py-5 px-4 md:px-10 text-secondary bg-neutral-950 placeholder:text-neutral-700"
         />
         <button
           type="submit"
-          className={cn("text-4xl rounded-r-lg bg-primary py-2 px-5 bg-white text-black z-10", { "opacity-50 cursor-not-allowed": loading })}
+          className={cn("rounded-r-lg capitalize text-lg py-2 px-8 bg-white text-black z-10", { "cursor-not-allowed": loading })}
           disabled={loading}
         >
           {loading ? (
@@ -61,7 +61,7 @@ export default function Input() {
               <div role="status">
                 <svg
                   aria-hidden="true"
-                  className="inline w-8 h-8 text-gray-400 animate-spin dark:text-gray-600 fill-gray-600 dark:fill-gray-400"
+                  className="inline w-4 h-4 text-gray-400 animate-spin dark:text-gray-600 fill-gray-600 dark:fill-gray-400"
                   viewBox="0 0 100 101"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -80,12 +80,16 @@ export default function Input() {
             </>
           ) : (
             <>
-              <IconArrowRight />
+              <IconArrowRight/>
             </>
           )}
         </button>
       </form>
-      <ToastContainer position="bottom-right" />
+      <Toaster
+        toastOptions={{
+          duration: 2000,
+        }}
+      />
     </>
   );
 }
