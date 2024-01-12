@@ -50,6 +50,7 @@ export default function Input() {
           type="email"
           onChange={handleInputChange}
           name="email"
+          value={email}
           autoComplete="email"
           required
           placeholder="elon@spacex.com"
