@@ -2,11 +2,13 @@
 import { IconArrowRight } from "@tabler/icons-react";
 import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 import { joinHackathon } from "../actions";
 import { cn } from "@/lib/utils";
 
 export default function Input() {
+  const router = useRouter();
   const [email, setEmail] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -35,6 +37,7 @@ export default function Input() {
       setLoading(false);
       setEmail("")
       toast.success(response.message);
+      router.push("https://crackeddevs.devpost.com/");
       return;
     }
     
