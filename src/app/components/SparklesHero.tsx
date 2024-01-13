@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import SparklesCore from "@/components/ui/SparklesCore";
-import Input from "./Input";
 
 export default function SparklesHero() {
   return (
@@ -13,10 +12,10 @@ export default function SparklesHero() {
         <p className="text-center text-secondary z-20 text-sm md:text-lg font-bold my-1">
           $50,000+ in prizes
         </p>
-      <h1 className="text-4xl sm:text-8xl mb-5 lg:mb-0 font-bold text-center text-white relative z-20">
+      <h1 className="text-4xl sm:text-8xl lg:mb-0 font-bold text-center text-white relative z-20">
         <div className="bg-gradient-to-br from-[#6366F1] to-white text-transparent bg-clip-text">CrackedDevs.com</div> Hackathon
       </h1>
-      <div className="w-[40rem] h-28 relative">
+      <div className="w-[40rem] h-28 relative mb-6">
         {/* Gradients */}
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
@@ -28,22 +27,19 @@ export default function SparklesHero() {
           minSize={0.4}
           maxSize={2}
           particleDensity={600}
-          className="w-full h-full"
+          className="w-full h-full z-10"
           particleColor="#FFFFFF"
         />
 
         {/* Radial Gradient to prevent sharp edges */}
-        <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
       </div>
-      <div>
-      <p className="text-secondary text-sm md:text-xl my-10 lg:my-5 text-center">
-        Sign Up to apply!
-      </p>
-        <Input />
-      </div>
-      <p className="text-secondary mt-10 lg:mt-5 text-sm md:text-xl opacity-40 hover:opacity-90 hover:cursor-pointer">
-        More details coming soon...
-      </p>
+      <a
+          href="https://crackeddevs.devpost.com/"
+          target="_blank"
+          className="z-40 cursor-pointer rounded-lg capitalize text-lg py-2 px-4 md:px-6 lg:px-8 bg-white text-black"
+        >
+          Apply Now!
+        </a>
     </section>
   );
 }
