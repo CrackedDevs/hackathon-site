@@ -7,13 +7,16 @@ export default function SparklesHero() {
   return (
     <section className="h-[100vh] relative w-full bg-black flex flex-col items-center pt-20 lg:justify-center overflow-hidden">
       <div className="absolute w-full h-full z-10 inset-0 bg-[url(/grid.svg)] bg-center bg-cover opacity-30 [mask-image:linear-gradient(180deg,rgba(255,255,255,255))]"></div>
+      <p className="text-center text-secondary z-20 text-sm md:text-lg font-bold my-1">
+          Online, January 19 - 21st
+        </p>
+        <p className="text-center text-secondary z-20 text-sm md:text-lg font-bold my-1">
+          $50,000+ in prizes
+        </p>
       <h1 className="text-5xl sm:text-8xl mb-5 lg:mb-0 font-bold text-center text-white relative z-20">
-        <div className="bg-gradient-to-br from-[#6366F1] to-white text-transparent bg-clip-text">CrackedDevs</div> Hackathon
+        <div className="bg-gradient-to-br from-[#6366F1] to-white text-transparent bg-clip-text">CrackedDevs.com</div> Hackathon
       </h1>
       <div className="w-[40rem] h-28 relative">
-        <p className="text-secondary absolute z-20 left-52 top-5 text-sm md:text-lg font-bold my-5">
-          Online, January 20 - 22
-        </p>
         {/* Gradients */}
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
@@ -34,7 +37,7 @@ export default function SparklesHero() {
       </div>
       <div>
       <p className="text-secondary text-sm md:text-xl my-10 lg:my-5 text-center">
-        Sign Up for the upcoming announcements.
+        Sign Up to apply!
       </p>
         <Input />
       </div>
