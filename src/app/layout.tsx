@@ -5,7 +5,7 @@ import "./globals.css";
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "crackeddevs Hackathon",
+  title: "CrackedDevs Hackathon",
   description: "The greatest hackathon of all time.",
 };
 
