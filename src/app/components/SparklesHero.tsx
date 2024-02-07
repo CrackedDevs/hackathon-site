@@ -13,7 +13,7 @@ export default function SparklesHero() {
           TBA Soon!
         </p>
       <h1 className="text-4xl sm:text-8xl lg:mb-0 font-bold text-center text-white relative z-20">
-        <div className="bg-gradient-to-br from-[#6366F1] to-white text-transparent bg-clip-text">CrackedDevs.com</div> Hackathon
+        <div className="bg-gradient-to-br from-[#6366F1] to-white text-transparent bg-clip-text">CrackedDevs.com</div> Hackathon 2.0
       </h1>
       <div className="w-[40rem] h-28 relative mb-6">
         {/* Gradients */}
