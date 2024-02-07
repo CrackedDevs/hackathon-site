@@ -5,8 +5,8 @@ import "./globals.css";
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CrackedDevs Hackathon",
-  description: "The greatest hackathon of all time.",
+  title: "CrackedDevs Hackathon 2.0",
+  description: "The greatest hackathon of all time is back.",
 };
 
 export default function RootLayout({
