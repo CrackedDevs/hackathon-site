@@ -7,7 +7,7 @@ export default function SparklesHero() {
     <section className="h-[100vh] relative w-full bg-black flex flex-col items-center justify-center overflow-hidden">
       <div className="absolute w-full h-full z-10 inset-0 bg-[url(/grid.svg)] bg-center bg-cover opacity-30 [mask-image:linear-gradient(180deg,rgba(255,255,255,255))]"></div>
       <p className="text-center text-secondary z-20 text-sm md:text-lg font-bold my-1">
-          Online, Early March! (8th - 11th March 2024)
+          Online, Mid March! (15th - 17th March 2024)
         </p>
         <p className="text-center text-secondary z-20 text-sm md:text-lg font-bold my-1">
           TBA Soon!
@@ -34,11 +34,11 @@ export default function SparklesHero() {
         {/* Radial Gradient to prevent sharp edges */}
       </div>
       <a
-          href="#"
+          href="https://crackeddevs2.devpost.com/"
           target="_blank"
           className="z-40 cursor-pointer rounded-lg capitalize text-lg py-2 px-4 md:px-6 lg:px-8 bg-white text-black"
         >
-         Registration will open soon!
+         Apply now!!
         </a>
     </section>
   );
